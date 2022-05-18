@@ -1,0 +1,298 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <TabHost
+        android:id="@+id/tabHost"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:layout_editor_absoluteX="89dp"
+        tools:layout_editor_absoluteY="68dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <TabWidget
+                android:id="@android:id/tabs"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+            <FrameLayout
+                android:id="@android:id/tabcontent"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <com.example.myclock.TimeView
+                    android:id="@+id/tabTime"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/tvTime"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:gravity="center"
+                        android:textSize="60sp"
+                        />
+
+                </com.example.myclock.TimeView>
+
+                <com.example.myclock.AlarmView
+                    android:id="@+id/tabAlarm"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical">
+
+                    <ListView
+                        android:id="@+id/lvAlarmList"
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:layout_weight="1"
+                        >
+                    </ListView>
+                    <Button
+                        android:id="@+id/btnAddAlarm"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="@string/addalarm"
+                        android:textAllCaps="false"/>
+
+                </com.example.myclock.AlarmView>
+
+                <com.example.myclock.TimerView
+                    android:id="@+id/tabTimer"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical"
+                    >
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:gravity="center"
+                        android:layout_marginTop="280dp"
+                        >
+                        <EditText
+                            android:id="@+id/etHour"
+                            android:layout_width="62dp"
+                            android:layout_height="wrap_content"
+                            android:textSize="45sp"
+                            android:hint="00"
+                            android:inputType="number"
+                            android:singleLine="true"/>
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/hour"
+                            android:textColor="@color/black"
+                            android:textSize="45sp"/>
+
+                        <EditText
+                            android:id="@+id/etMin"
+                            android:layout_width="62dp"
+                            android:layout_height="wrap_content"
+                            android:textSize="45sp"
+                            android:hint="00"
+                            android:inputType="number"
+                            android:singleLine="true"/>
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/min"
+                            android:textColor="@color/black"
+                            android:textSize="45sp"/>
+
+                        <EditText
+                            android:id="@+id/etSec"
+                            android:layout_width="62dp"
+                            android:layout_height="wrap_content"
+                            android:textSize="45sp"
+                            android:hint="00"
+                            android:inputType="number"
+                            android:singleLine="true"/>
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/sec"
+                            android:textColor="@color/black"
+                            android:textSize="45sp"/>
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:layout_marginStart="30dp"
+                        android:layout_marginEnd="30dp"
+                        android:layout_marginTop="300dp">
+                        <Button
+                            android:layout_weight="1"
+                            android:id="@+id/btnStart"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="开始"
+                            android:layout_marginEnd="20dp"
+
+                            />
+
+                        <Button
+                            android:layout_weight="1"
+                            android:id="@+id/btnPause"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="暂停"
+                            android:layout_marginEnd="20dp"
+
+
+                            />
+
+                        <Button
+                            android:layout_weight="1"
+                            android:id="@+id/btnResume"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="继续"
+                            android:layout_marginEnd="20dp"
+
+
+                            />
+
+                        <Button
+                            android:layout_weight="1"
+                            android:id="@+id/btnStop"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="停止"
+
+                            />
+                    </LinearLayout>
+
+                </com.example.myclock.TimerView>
+
+                <com.example.myclock.StopWatchView
+                    android:id="@+id/tabStopWatch"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical">
+
+                    <LinearLayout
+                        android:layout_width="300dp"
+                        android:orientation="horizontal"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center">
+
+                        <TextView
+                            android:id="@+id/timeHour"
+                            android:layout_weight="1"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:gravity="center"
+                            android:textSize="40dp"
+                            android:textAppearance="?android:attr/textAppearanceLarge"/>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text=":"
+                            android:textAppearance="?android:attr/textAppearanceLarge"/>
+                        <TextView
+                            android:id="@+id/timeMin"
+                            android:layout_weight="1"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:gravity="center"
+                            android:textSize="40dp"
+                            android:textAppearance="?android:attr/textAppearanceLarge"/>
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text=":"
+                            android:textAppearance="?android:attr/textAppearanceLarge"/>
+                        <TextView
+                            android:id="@+id/timeSec"
+                            android:layout_weight="1"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:gravity="center"
+                            android:textSize="40dp"
+                            android:textAppearance="?android:attr/textAppearanceLarge"/>
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text=":"
+                            android:textAppearance="?android:attr/textAppearanceLarge"/>
+                        <TextView
+                            android:id="@+id/timeMSec"
+                            android:layout_weight="1"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:gravity="center"
+                            android:textSize="40dp"
+                            android:textAppearance="?android:attr/textAppearanceLarge"/>
+                    </LinearLayout>
+
+                    <ListView
+                        android:id="@+id/lvStopWatchList"
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:layout_weight="1">
+                    </ListView>
+
+                    <LinearLayout
+                        android:layout_width="380dp"
+                        android:layout_gravity="center"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+                        <Button
+                            android:id="@+id/btnSWStart"
+                            android:layout_weight="1"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginEnd="10dp"
+                            android:text="开始"/>
+                        <Button
+                            android:id="@+id/btnSWPause"
+                            android:layout_weight="1"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginEnd="10dp"
+                            android:text="暂停"/>
+                        <Button
+                            android:id="@+id/btnSWResume"
+                            android:layout_weight="1"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginEnd="10dp"
+                            android:text="继续"/>
+                        <Button
+                            android:id="@+id/btnSWStop"
+                            android:layout_weight="1"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginEnd="10dp"
+                            android:text="停止"/>
+                        <Button
+                            android:id="@+id/btnSWFlag"
+                            android:layout_weight="1"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginEnd="10dp"
+                            android:text="计时"/>
+                    </LinearLayout>
+
+                </com.example.myclock.StopWatchView>
+            </FrameLayout>
+        </LinearLayout>
+    </TabHost>
+
+</FrameLayout>

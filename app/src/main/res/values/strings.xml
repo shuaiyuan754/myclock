@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">myClock</string>
+    <string name="addalarm">addAlarm</string>
+    <string name="hour">时</string>
+    <string name="min">分</string>
+    <string name="sec">秒</string>
+</resources>
